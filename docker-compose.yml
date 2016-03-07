@@ -1,0 +1,15 @@
+php:
+  build: ./php
+  volumes:
+    - ./www:/var/www/html
+  ports:
+    - "80:80"
+  links:
+    - "db:mariadb"
+
+db:
+  image: mariadb
+  volumes:
+    - ./mariadb/datadir:/var/lib/mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: 123456
