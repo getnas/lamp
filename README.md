@@ -23,7 +23,7 @@ MariaDB 数据库账户 `root`，初始密码 `123456`
 > 假设当前主机用户为 `ubuntu`
 
     # 将 `ubuntu` 添加到 `www-data` 组
-    usermod -G www-data ubuntu
+    usermod -aG www-data ubuntu
     # `www` 目录修改为组成员可执行
     chmod g+x ./www/
 
