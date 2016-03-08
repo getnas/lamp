@@ -13,3 +13,5 @@ docker-compose up -d
 ```
 
 默认开放 80 端口，浏览器访问 http://localhost
+
+MariaDB 数据库账户 `root`，初始密码 `123456`
