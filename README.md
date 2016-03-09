@@ -31,4 +31,12 @@ MariaDB 数据库账户 `root`，初始密码 `123456`
 
 #### 注意事项
 
-如果要在同一主机运行多个需要映射 `80` 端口的容器时，请结合 [Docker Nginx Reverse](https://github.com/getnas/nginx-reverse) 使用。
+* 如果要在同一主机运行多个需要映射 `80` 端口的容器时，请结合 [Docker Nginx Reverse](https://github.com/getnas/nginx-reverse) 使用。
+* 用于本地开发时，可能会出现主机用户无法编辑 `www` 目录中文件的情况或编辑过的代码无法正确执行出现 `403` 错误，可以这样解决：
+
+      # 设置允许组用户执行程序
+      sudo chmod g+x www
+      # 将用户加入 `www-data` 组(假设当前用户为 `ubuntu`)
+      sudo usermod -aG www-data ubuntu
+      # 将 `www-data` 用户加入当前用户组
+      sudo usermod -aG ubuntu www-data
