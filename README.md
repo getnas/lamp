@@ -41,3 +41,9 @@ MariaDB 数据库账户 `root`，初始密码 `123456`
     sudo usermod -aG www-data ubuntu
     # 将 `www-data` 用户加入当前用户组
     sudo usermod -aG ubuntu www-data
+
+#### Vagrant 环境
+
+本项目可以用于 `vagrant` 环境，建议使用 `ubuntu/trusty64` 镜像。
+
+> 特别注意：在 vagrant 环境下，请注销 `docker-compose.yml` 文件中的数据库段落的 `volumes` 映射设置，不注销会导致 `mariadb` 无法启动。
