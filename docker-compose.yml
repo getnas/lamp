@@ -6,10 +6,12 @@ php:
     - "80:80"
   links:
     - "db:mariadb"
+  #external_links:
+  #  - "mariadb_db_1:mariadb"
 
 db:
   image: mariadb
-  volumes:
-    - ./mariadb/datadir:/var/lib/mysql
+  #volumes:
+  #  - ./mariadb/datadir:/var/lib/mysql
   environment:
     MYSQL_ROOT_PASSWORD: 123456
